@@ -4,6 +4,7 @@
 /blog-fe/node_modules
 /blog-fe/.next
 /*/.next/
+/*/.idea
 /studio/node_modules
 /*/node_modules
 /.pnp
