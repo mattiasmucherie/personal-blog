@@ -1,0 +1,25 @@
+.article{
+  color: #94a1b2;
+}
+
+.image{
+  border-radius: 50%;
+}
+.author{
+  display:flex;
+  align-items: center;
+  gap: 1rem;
+}
+.categories {
+  padding: 0;
+  margin-bottom: 2rem;
+}
+.category{
+  padding: 0.125rem 0.5rem 0.25rem;
+  margin-right: 0.75rem;
+  text-transform: lowercase;
+  background-color: #42424D;
+  border-radius: 1rem;
+  list-style: none;
+  display:inline-block;
+}

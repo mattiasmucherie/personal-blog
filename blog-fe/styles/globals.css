@@ -19,3 +19,6 @@ img {
 * {
   box-sizing: border-box;
 }
+ pre{
+  overflow:auto;
+}

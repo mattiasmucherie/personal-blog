@@ -2,6 +2,8 @@
 
 # dependencies
 /blog-fe/node_modules
+/blog-fe/.next
+/*/.next/
 /studio/node_modules
 /*/node_modules
 /.pnp
