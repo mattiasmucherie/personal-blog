@@ -15,7 +15,13 @@ type BlogPostProps = {
   post: PostType
 }
 const BlogPost: VFC<BlogPostProps> = ({ post }) => {
-  const { title, name, categories, authorImage, body } = post
+  const {
+    title = 'Missing title',
+    name = 'Missing name',
+    categories,
+    authorImage,
+    body = 'Missing Body',
+  } = post
   return (
     <article className={styles.article}>
       <h1>{title}</h1>

@@ -32,14 +32,14 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
   )
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: true,
+    fallback: false,
   }
 }
 
 export const getStaticProps: GetStaticProps<PostProps, Params> = async (
   context
 ) => {
-  const { slug } = context.params!
+  const { slug = '' } = context.params!
   const post = await client.fetch(query, { slug })
   return {
     props: {
