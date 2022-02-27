@@ -7,12 +7,7 @@ const Navbar = () => {
       <nav>
         <ul>
           <li>
-            <Link href={'/'}>
-              <a className={styles.name}>
-                <span>Mattias</span> {''}
-                <span>Mucherie</span>
-              </a>
-            </Link>
+            <Link href={'/'}>Mattias Mucherie</Link>
           </li>
         </ul>
       </nav>

@@ -22,7 +22,10 @@ const BlogPosts: VFC<BlogPostsProps> = ({ posts }) => {
                 {new Date(post.publishedAt).toDateString()}
               </time>
             </div>
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              className={styles.miniBody}
+            >
               {post.miniBody}
             </ReactMarkdown>
             <div>

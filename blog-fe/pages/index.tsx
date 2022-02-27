@@ -10,7 +10,7 @@ type IndexProps = {
 const Index: NextPage<IndexProps> = ({ posts }) => {
   return (
     <main>
-      <h1>My blog filled with random posts and my training schedule</h1>
+      <h2>Mostly training logs but more will come</h2>
       <BlogPosts posts={posts} />
     </main>
   )
