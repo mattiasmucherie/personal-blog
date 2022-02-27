@@ -7,6 +7,7 @@ import { VFC } from 'react'
 import readingTime from 'reading-time'
 import Image from 'next/image'
 import styles from './BlogPost.module.scss'
+import Link from 'next/link'
 
 function urlFor(source: AuthorImage) {
   return imageUrlBuilder(client).image(source)
@@ -39,7 +40,6 @@ const BlogPost: VFC<BlogPostProps> = ({ post }) => {
       )}
       <ReactMarkdown remarkPlugins={[remarkGfm]}>{body}</ReactMarkdown>
       <br />
-      <br />
       <span className={styles.author}>
         {authorImage && (
           <div>
@@ -54,6 +54,9 @@ const BlogPost: VFC<BlogPostProps> = ({ post }) => {
         )}
         <span>{name}</span>
       </span>
+      <div className={styles.backToPost}>
+        <Link href={'/'}>&#8592; Back to posts</Link>
+      </div>
     </article>
   )
 }
