@@ -1,0 +1,19 @@
+.header {
+  padding: 1rem;
+  max-width: 47rem;
+  margin: 0 auto;
+
+  ul{
+    padding: 0;
+    margin: 0;
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-transform: lowercase;
+  }
+  li{
+    list-style: none;
+    font-size: 22px;
+    font-weight: bold;
+  }
+}
