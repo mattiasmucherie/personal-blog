@@ -7,7 +7,12 @@ const Navbar = () => {
       <nav>
         <ul>
           <li>
-            <Link href={'/'}>Mattias Mucherie</Link>
+            <Link href={'/'}>
+              <a className={styles.name}>
+                <span>Mattias</span> {''}
+                <span>Mucherie</span>
+              </a>
+            </Link>
           </li>
         </ul>
       </nav>

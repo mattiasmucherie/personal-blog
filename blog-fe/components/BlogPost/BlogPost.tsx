@@ -38,7 +38,9 @@ const BlogPost: VFC<BlogPostProps> = ({ post }) => {
           ))}
         </ul>
       )}
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{body}</ReactMarkdown>
+      <ReactMarkdown remarkPlugins={[remarkGfm]} className={styles.markdown}>
+        {body}
+      </ReactMarkdown>
       <br />
       <span className={styles.author}>
         {authorImage && (
