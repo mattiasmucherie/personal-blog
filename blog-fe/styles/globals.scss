@@ -12,21 +12,23 @@ a {
   color: #2cb67d;
   text-decoration: none;
   position: relative;
-  &:after{
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: -1px;
-    left: 0;
-    background-color: #2cb67d;
-    transform-origin: bottom right;
-    transition: transform 0.1s ease-out;
-  }
-  &:hover:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+  @media only screen and (min-width: 600px) {
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: -1px;
+      left: 0;
+      background-color: #2cb67d;
+      transform-origin: bottom right;
+      transition: transform 0.1s ease-out;
+    }
+    &:hover:after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
   }
 }
 img {
