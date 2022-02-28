@@ -4,13 +4,13 @@ import { GeneralPost } from '../types/generalPost'
 import { NextPage } from 'next'
 import BlogPosts from '../components/BlogPosts/BlogPosts'
 
-type IndexProps = {
+type TrainingLogProps = {
   posts: GeneralPost[]
 }
-const Index: NextPage<IndexProps> = ({ posts }) => {
+const TrainingLog: NextPage<TrainingLogProps> = ({ posts }) => {
   return (
     <main>
-      <h2>My thought and tips and tricks</h2>
+      <h2>Training Log</h2>
       <BlogPosts posts={posts} />
     </main>
   )
@@ -18,13 +18,15 @@ const Index: NextPage<IndexProps> = ({ posts }) => {
 
 export const getStaticProps = async () => {
   const posts = await client.fetch<GeneralPost[]>(groq`
-  *[_type == "post" && publishedAt < now() && !('sports' in categories[]->title)]|order(publishedAt desc)|{
-      title,
-      _id,
-      slug,
-      publishedAt,
-      miniBody,
-      "categories": categories[]->title,
+      *[_type == "post" && publishedAt < now() && 'sports' in categories[]->title]|
+      order(publishedAt desc)|
+      {
+        title,
+        _id,
+        slug,
+        publishedAt,
+        miniBody,
+        "categories": categories[]->title,
       }
     `)
   return {
@@ -35,4 +37,4 @@ export const getStaticProps = async () => {
   }
 }
 
-export default Index
+export default TrainingLog

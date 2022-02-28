@@ -9,6 +9,9 @@ const Navbar = () => {
           <li>
             <Link href={'/'}>Mattias Mucherie</Link>
           </li>
+          <li>
+            <Link href={'/training-log'}>Training Log</Link>
+          </li>
         </ul>
       </nav>
     </header>
