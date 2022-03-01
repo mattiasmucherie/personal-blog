@@ -3,16 +3,24 @@ import client from '../client'
 import { GeneralPost } from '../types/generalPost'
 import { NextPage } from 'next'
 import BlogPosts from '../components/BlogPosts/BlogPosts'
+import Head from 'next/head'
 
 type TrainingLogProps = {
   posts: GeneralPost[]
 }
 const TrainingLog: NextPage<TrainingLogProps> = ({ posts }) => {
   return (
-    <main>
-      <h2>Training Log</h2>
-      <BlogPosts posts={posts} />
-    </main>
+    <>
+      <Head>
+        <title>Training log</title>
+        <meta charSet="utf-8" name="Training log" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <main>
+        <h2>Training Log</h2>
+        <BlogPosts posts={posts} />
+      </main>
+    </>
   )
 }
 

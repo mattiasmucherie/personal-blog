@@ -3,16 +3,24 @@ import client from '../client'
 import { GeneralPost } from '../types/generalPost'
 import { NextPage } from 'next'
 import BlogPosts from '../components/BlogPosts/BlogPosts'
+import Head from 'next/head'
 
 type IndexProps = {
   posts: GeneralPost[]
 }
 const Index: NextPage<IndexProps> = ({ posts }) => {
   return (
-    <main>
-      <h2>My thought and tips and tricks</h2>
-      <BlogPosts posts={posts} />
-    </main>
+    <>
+      <Head>
+        <title>Mattias Blog</title>
+        <meta charSet="utf-8" name="Mattias blog" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <main>
+        <h2>My thought and tips and tricks</h2>
+        <BlogPosts posts={posts} />
+      </main>
+    </>
   )
 }
 
