@@ -13,8 +13,9 @@ const TrainingLog: NextPage<TrainingLogProps> = ({ posts }) => {
     <>
       <Head>
         <title>Training log</title>
-        <meta charSet="utf-8" name="Training log" />
+        <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="Mattias Mucherie training log" />
       </Head>
       <main>
         <h2>Training Log</h2>

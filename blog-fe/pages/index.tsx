@@ -13,8 +13,9 @@ const Index: NextPage<IndexProps> = ({ posts }) => {
     <>
       <Head>
         <title>Mattias Blog</title>
-        <meta charSet="utf-8" name="Mattias blog" />
+        <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="Mattias Mucherie blog" />
       </Head>
       <main>
         <h2>My thought and tips and tricks</h2>
