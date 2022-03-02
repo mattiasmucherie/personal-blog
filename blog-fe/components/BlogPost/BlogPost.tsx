@@ -27,23 +27,25 @@ const BlogPost: VFC<BlogPostProps> = ({ post }) => {
   return (
     <article className={styles.article}>
       <h1>{title}</h1>
-      <time
-        dateTime={formatDate(post.publishedAt)}
-        title={formatDate(post.publishedAt)}
-      >
-        {formatDate(post.publishedAt, true)}
-      </time>
-      {' - '}
-      <span>{readingTime(body).text}</span>
-      {categories && (
-        <ul className={styles.categories}>
-          {categories.map((category) => (
-            <li key={category} className={styles.category}>
-              {category}
-            </li>
-          ))}
-        </ul>
-      )}
+      <span className={styles.articleInfo}>
+        <time
+          dateTime={formatDate(post.publishedAt)}
+          title={formatDate(post.publishedAt)}
+        >
+          {formatDate(post.publishedAt, true)}
+        </time>
+        {'-'}
+        <span className={styles.readingTime}>{readingTime(body).text}</span>
+        {categories && (
+          <ul className={styles.categories}>
+            {categories.map((category) => (
+              <li key={category} className={styles.category}>
+                {category}
+              </li>
+            ))}
+          </ul>
+        )}
+      </span>
       <ReactMarkdown remarkPlugins={[remarkGfm]} className={styles.markdown}>
         {body}
       </ReactMarkdown>
