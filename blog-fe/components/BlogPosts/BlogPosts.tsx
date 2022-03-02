@@ -4,6 +4,9 @@ import remarkGfm from 'remark-gfm'
 import ReactMarkdown from 'react-markdown'
 import styles from './BlogPosts.module.scss'
 import Link from 'next/link'
+import formatDistance from 'date-fns/formatDistance'
+import differenceInDays from 'date-fns/differenceInDays'
+import { formatDate } from './formatDate'
 
 type BlogPostsProps = {
   posts: GeneralPost[]
@@ -18,8 +21,11 @@ const BlogPosts: VFC<BlogPostsProps> = ({ posts }) => {
               <Link href="/post/[slug]" as={`/post/${post.slug.current}`}>
                 <a>{post.title}</a>
               </Link>
-              <time dateTime={new Date(post.publishedAt).toDateString()}>
-                {new Date(post.publishedAt).toDateString()}
+              <time
+                dateTime={formatDate(post.publishedAt)}
+                title={formatDate(post.publishedAt)}
+              >
+                {formatDate(post.publishedAt, true)}
               </time>
             </div>
             <ReactMarkdown

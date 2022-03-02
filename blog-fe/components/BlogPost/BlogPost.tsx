@@ -8,6 +8,7 @@ import readingTime from 'reading-time'
 import Image from 'next/image'
 import styles from './BlogPost.module.scss'
 import Link from 'next/link'
+import { formatDate } from '../BlogPosts/formatDate'
 
 function urlFor(source: AuthorImage) {
   return imageUrlBuilder(client).image(source)
@@ -26,7 +27,12 @@ const BlogPost: VFC<BlogPostProps> = ({ post }) => {
   return (
     <article className={styles.article}>
       <h1>{title}</h1>
-      <time>{new Date(post.publishedAt).toDateString()}</time>
+      <time
+        dateTime={formatDate(post.publishedAt)}
+        title={formatDate(post.publishedAt)}
+      >
+        {formatDate(post.publishedAt, true)}
+      </time>
       {' - '}
       <span>{readingTime(body).text}</span>
       {categories && (
