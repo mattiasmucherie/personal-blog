@@ -9,6 +9,7 @@ import Image from 'next/image'
 import styles from './BlogPost.module.scss'
 import Link from 'next/link'
 import { formatDate } from '../BlogPosts/formatDate'
+import SyntaxHighlight from '../SyntaxHighlight'
 
 function urlFor(source: AuthorImage) {
   return imageUrlBuilder(client).image(source)
@@ -46,7 +47,11 @@ const BlogPost: VFC<BlogPostProps> = ({ post }) => {
           </ul>
         )}
       </span>
-      <ReactMarkdown remarkPlugins={[remarkGfm]} className={styles.markdown}>
+      <ReactMarkdown
+        components={SyntaxHighlight}
+        remarkPlugins={[remarkGfm]}
+        className={styles.markdown}
+      >
         {body}
       </ReactMarkdown>
       <br />

@@ -11,25 +11,6 @@ body {
 a {
   color: #2cb67d;
   text-decoration: none;
-  position: relative;
-  @media only screen and (min-width: 600px) {
-    &:after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      transform: scaleX(0);
-      height: 2px;
-      bottom: -1px;
-      left: 0;
-      background-color: #2cb67d;
-      transform-origin: bottom right;
-      transition: transform 0.1s ease-out;
-    }
-    &:hover:after {
-      transform: scaleX(1);
-      transform-origin: bottom left;
-    }
-  }
 }
 
 img {
@@ -49,4 +30,11 @@ pre {
 
 p {
   line-height: 24px;
+  code {
+    padding: .2em .4em;
+    margin: 0;
+    font-size: 13.6px;
+    background-color:rgba(99,110,123,0.4) ;
+    border-radius: 6px
+  }
 }
