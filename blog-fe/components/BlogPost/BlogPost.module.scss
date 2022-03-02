@@ -1,6 +1,7 @@
 .article {
   color: #94a1b2;
-  h1{
+
+  h1 {
     color: #fffffe;
   }
 }
@@ -16,20 +17,22 @@
 }
 
 .articleInfo {
-  display:flex;
+  display: flex;
   gap: 0.25rem;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
 
 }
-.readingTime{
+
+.readingTime {
   margin-right: 1rem;
 }
+
 .categories {
   padding: 0;
   margin: 0.5rem 0;
-  display:inline-block;
+  display: inline-block;
 }
 
 .category {
