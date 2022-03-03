@@ -4,6 +4,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { ParsedUrlQuery } from 'querystring'
 import { PostType } from '../../types/postType'
 import BlogPost from '../../components/BlogPost/BlogPost'
+import Head from 'next/head'
 
 interface Params extends ParsedUrlQuery {
   slug: string
@@ -13,7 +14,16 @@ type PostProps = {
   post: PostType
 }
 const Post: NextPage<PostProps> = ({ post }) => {
-  return <BlogPost post={post} />
+  return (
+    <>
+      <Head>
+        <title>{post.title}</title>
+        <meta charSet="utf-8" />
+        <meta name="description" content={post.miniBody} />
+      </Head>
+      <BlogPost post={post} />
+    </>
+  )
 }
 
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
@@ -23,7 +33,8 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   "authorImage": author->image,
   body,
   mainImage,
-  publishedAt
+  publishedAt,
+  miniBody
 }`
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {

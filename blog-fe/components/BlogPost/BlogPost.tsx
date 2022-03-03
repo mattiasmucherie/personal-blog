@@ -25,6 +25,7 @@ const BlogPost: VFC<BlogPostProps> = ({ post }) => {
     authorImage,
     body = 'Missing Body',
   } = post
+  const pathToGoBackTo = categories.includes('sports') ? '/training-log' : '/'
   return (
     <article className={styles.article}>
       <h1>{title}</h1>
@@ -70,7 +71,7 @@ const BlogPost: VFC<BlogPostProps> = ({ post }) => {
         <span>{name}</span>
       </span>
       <div className={styles.backToPost}>
-        <Link href={'/'}>&#8592; Back to posts</Link>
+        <Link href={pathToGoBackTo}>&#8592; Back to posts</Link>
       </div>
     </article>
   )

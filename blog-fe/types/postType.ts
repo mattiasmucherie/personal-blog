@@ -6,6 +6,7 @@ export interface PostType {
   name: string
   title: string
   publishedAt: Date
+  miniBody: string
 }
 
 export interface AuthorImage {

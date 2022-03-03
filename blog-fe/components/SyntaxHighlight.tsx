@@ -6,7 +6,6 @@ import { CodeProps } from 'react-markdown/lib/ast-to-react'
 const SyntaxHighlight = {
   code({ node, inline, className, children, ...props }: CodeProps) {
     const match = /language-(\w+)/.exec(className || '')
-    console.warn(inline)
     return !inline && match ? (
       <SyntaxHighlighter
         style={vscDarkPlus}
