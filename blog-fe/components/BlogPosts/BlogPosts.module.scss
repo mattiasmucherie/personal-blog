@@ -19,15 +19,24 @@
   display: flex;
   justify-content: space-between;
 }
-
+.categoryWrapper{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
 .category {
   padding: 0.125rem 0.5rem 0.25rem;
-  margin-right: 0.75rem;
   text-transform: lowercase;
   background-color: #42424D;
   border-radius: 1rem;
+  border: none;
+  color: #fffffe;
+  font-size: 16px;
+  cursor: pointer;
 }
-
+.highlight{
+  box-shadow: 0 0 5px #fffffe;
+}
 .miniBody {
   flex-grow: 1;
 }
