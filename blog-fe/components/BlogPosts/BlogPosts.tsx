@@ -4,7 +4,7 @@ import remarkGfm from 'remark-gfm'
 import ReactMarkdown from 'react-markdown'
 import styles from './BlogPosts.module.scss'
 import Link from 'next/link'
-import { formatDate } from './formatDate'
+import { formatDate } from '../../utils/formatDate'
 
 type BlogPostsProps = {
   posts: GeneralPost[]
@@ -55,7 +55,7 @@ const BlogPosts: VFC<BlogPostsProps> = ({ posts }) => {
                   dateTime={formatDate(post.publishedAt)}
                   title={formatDate(post.publishedAt)}
                 >
-                  {formatDate(post.publishedAt, true)}
+                  {formatDate(post.publishedAt)}
                 </time>
               </div>
               <ReactMarkdown

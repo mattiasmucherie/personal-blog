@@ -8,7 +8,7 @@ import readingTime from 'reading-time'
 import Image from 'next/image'
 import styles from './BlogPost.module.scss'
 import Link from 'next/link'
-import { formatDate } from '../BlogPosts/formatDate'
+import { formatDate } from '../../utils/formatDate'
 import SyntaxHighlight from '../SyntaxHighlight'
 
 function urlFor(source: AuthorImage) {
@@ -34,7 +34,7 @@ const BlogPost: VFC<BlogPostProps> = ({ post }) => {
           dateTime={formatDate(post.publishedAt)}
           title={formatDate(post.publishedAt)}
         >
-          {formatDate(post.publishedAt, true)}
+          {formatDate(post.publishedAt)}
         </time>
         {'-'}
         <span className={styles.readingTime}>{readingTime(body).text}</span>
