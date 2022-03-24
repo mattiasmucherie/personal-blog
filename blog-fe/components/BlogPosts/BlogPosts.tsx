@@ -34,7 +34,7 @@ const BlogPosts: VFC<BlogPostsProps> = ({ posts }) => {
     <>
       <Container>
         <Group>
-          {categories.map((c) => (
+          {categories.sort().map((c) => (
             <Badge
               key={c}
               color={color}
