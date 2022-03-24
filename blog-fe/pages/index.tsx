@@ -4,6 +4,7 @@ import { GeneralPost } from '../types/generalPost'
 import { NextPage } from 'next'
 import BlogPosts from '../components/BlogPosts/BlogPosts'
 import Head from 'next/head'
+import { Space, Title } from '@mantine/core'
 
 type IndexProps = {
   posts: GeneralPost[]
@@ -18,7 +19,8 @@ const Index: NextPage<IndexProps> = ({ posts }) => {
         <meta name="description" content="Mattias Mucherie blog" />
       </Head>
       <main>
-        <h2>My thought and tips and tricks</h2>
+        <Title order={2}>My thought and tips and tricks</Title>
+        <Space h="xl" />
         <BlogPosts posts={posts} />
       </main>
     </>
