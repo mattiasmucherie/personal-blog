@@ -19,6 +19,7 @@ export function ColorSchemeToggle() {
               ? theme.colors.yellow[4]
               : theme.colors.blue[6],
         })}
+        aria-label={`color-scheme-toggle`}
       >
         {colorScheme === 'dark' ? <Sun size={24} /> : <MoonStars size={24} />}
       </ActionIcon>

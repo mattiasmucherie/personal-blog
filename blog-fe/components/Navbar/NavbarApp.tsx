@@ -45,6 +45,7 @@ const NavbarApp: FC = ({ children }) => {
                           : theme.colors.gray[0],
                     },
                   })}
+                  onClick={() => setOpened(false)}
                 >
                   <Text size="sm">Blog</Text>
                 </UnstyledButton>
@@ -70,6 +71,7 @@ const NavbarApp: FC = ({ children }) => {
                           : theme.colors.gray[0],
                     },
                   })}
+                  onClick={() => setOpened(false)}
                 >
                   <Text size="sm">Training Log</Text>
                 </UnstyledButton>

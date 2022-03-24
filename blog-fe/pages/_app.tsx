@@ -1,6 +1,5 @@
 import '../styles/globals.scss'
 import type { AppProps } from 'next/app'
-import Layout from '../components/Layout/Layout'
 import NavbarApp from '../components/Navbar/NavbarApp'
 import {
   ColorScheme,
