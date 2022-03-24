@@ -4,6 +4,7 @@ import { GeneralPost } from '../types/generalPost'
 import { NextPage } from 'next'
 import BlogPosts from '../components/BlogPosts/BlogPosts'
 import Head from 'next/head'
+import TrainingDots from '../components/TrainingDots/TrainingDots'
 
 type TrainingLogProps = {
   posts: GeneralPost[]
@@ -19,6 +20,7 @@ const TrainingLog: NextPage<TrainingLogProps> = ({ posts }) => {
       </Head>
       <main>
         <h2>Training Log</h2>
+        <TrainingDots posts={posts} />
         <BlogPosts posts={posts} />
       </main>
     </>

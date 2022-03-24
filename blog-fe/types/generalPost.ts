@@ -2,7 +2,7 @@ export interface GeneralPost {
   _id: string
   categories: string[]
   miniBody: string
-  publishedAt: Date
+  publishedAt: string
   slug: Slug
   title: string
 }
