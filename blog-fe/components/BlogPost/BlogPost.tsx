@@ -10,6 +10,7 @@ import styles from './BlogPost.module.scss'
 import Link from 'next/link'
 import { formatDate } from '../../utils/formatDate'
 import SyntaxHighlight from '../SyntaxHighlight'
+import { Badge, Button, Group, Text, Title } from '@mantine/core'
 
 function urlFor(source: AuthorImage) {
   return imageUrlBuilder(client).image(source)
@@ -27,32 +28,29 @@ const BlogPost: VFC<BlogPostProps> = ({ post }) => {
   } = post
   const pathToGoBackTo = categories.includes('sports') ? '/training-log' : '/'
   return (
-    <article className={styles.article}>
-      <h1>{title}</h1>
-      <span className={styles.articleInfo}>
+    <article>
+      <Title order={1} my={16}>
+        {title}
+      </Title>
+      <Group>
         <time
           dateTime={formatDate(post.publishedAt)}
           title={formatDate(post.publishedAt)}
         >
           {formatDate(post.publishedAt)}
         </time>
-        {'-'}
-        <span className={styles.readingTime}>{readingTime(body).text}</span>
-        {categories && (
-          <ul className={styles.categories}>
-            {categories.map((category) => (
-              <li key={category} className={styles.category}>
-                {category}
-              </li>
-            ))}
-          </ul>
-        )}
-      </span>
-      <ReactMarkdown
-        components={SyntaxHighlight}
-        remarkPlugins={[remarkGfm]}
-        className={styles.markdown}
-      >
+        <Text>{readingTime(body).text}</Text>
+        {categories.map((category) => (
+          <Badge
+            key={category}
+            variant={'gradient'}
+            gradient={{ from: 'teal', to: 'blue', deg: 60 }}
+          >
+            {category}
+          </Badge>
+        ))}
+      </Group>
+      <ReactMarkdown components={SyntaxHighlight} remarkPlugins={[remarkGfm]}>
         {body}
       </ReactMarkdown>
       <br />
@@ -70,9 +68,16 @@ const BlogPost: VFC<BlogPostProps> = ({ post }) => {
         )}
         <span>{name}</span>
       </span>
-      <div className={styles.backToPost}>
-        <Link href={pathToGoBackTo}>&#8592; Back to posts</Link>
-      </div>
+      <Link href={pathToGoBackTo} passHref>
+        <Button
+          component="a"
+          my={16}
+          variant="gradient"
+          gradient={{ from: 'teal', to: 'blue', deg: 60 }}
+        >
+          &#8592; Back to posts
+        </Button>
+      </Link>
     </article>
   )
 }

@@ -5,6 +5,7 @@ import { NextPage } from 'next'
 import BlogPosts from '../components/BlogPosts/BlogPosts'
 import Head from 'next/head'
 import TrainingDots from '../components/TrainingDots/TrainingDots'
+import { Space, Title } from '@mantine/core'
 
 type TrainingLogProps = {
   posts: GeneralPost[]
@@ -19,7 +20,8 @@ const TrainingLog: NextPage<TrainingLogProps> = ({ posts }) => {
         <meta name="description" content="Mattias Mucherie training log" />
       </Head>
       <main>
-        <h2>Training Log</h2>
+        <Title order={2}>Training Log</Title>
+        <Space h="xl" />
         <TrainingDots posts={posts} />
         <BlogPosts posts={posts} />
       </main>

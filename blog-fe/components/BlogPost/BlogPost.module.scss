@@ -1,11 +1,3 @@
-.article {
-  color: #94a1b2;
-
-  h1 {
-    color: #fffffe;
-  }
-}
-
 .image {
   border-radius: 50%;
 }
@@ -14,44 +6,4 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-}
-
-.articleInfo {
-  display: flex;
-  gap: 0.25rem;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-
-}
-
-.readingTime {
-  margin-right: 1rem;
-}
-
-.categories {
-  padding: 0;
-  margin: 0.5rem 0;
-  display: inline-block;
-}
-
-.category {
-  padding: 0.125rem 0.5rem 0.25rem;
-  margin-right: 0.75rem;
-  text-transform: lowercase;
-  background-color: #42424D;
-  border-radius: 1rem;
-  list-style: none;
-  display: inline-block;
-  color: #fffffe;
-}
-
-.backToPost {
-  margin: 1rem 0;
-}
-
-.markdown {
-  h1, h2, h3, h4, h5, h6 {
-    color: #fffffe;
-  }
 }

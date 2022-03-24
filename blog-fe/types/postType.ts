@@ -5,7 +5,7 @@ export interface PostType {
   mainImage: MainImagePost
   name: string
   title: string
-  publishedAt: Date
+  publishedAt: string
   miniBody: string
 }
 
