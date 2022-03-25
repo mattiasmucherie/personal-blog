@@ -1,7 +1,7 @@
-import { GeneralPost } from '../../types/generalPost'
 import { VFC } from 'react'
-import differenceInCalendarWeeks from 'date-fns/differenceInCalendarWeeks'
 import parseISO from 'date-fns/parseISO'
+import differenceInCalendarWeeks from 'date-fns/differenceInCalendarWeeks'
+import { GeneralPost } from '../../types/generalPost'
 
 interface TrainingDotsProps {
   posts: GeneralPost[]
